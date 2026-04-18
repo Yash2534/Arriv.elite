@@ -40,7 +40,7 @@ A sleek, modern e-commerce website built with React, Vite, and Tailwind CSS, fea
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/arriv.elite.git
+   git clone https://github.com/yash2534/arriv.elite.git
    cd arriv-elite
    ```
 
