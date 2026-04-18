@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Arihant - Modern E-commerce Website
 
 A sleek, modern e-commerce website built with React and Vite, featuring a beautiful product catalog, shopping cart functionality, and responsive design.
@@ -130,3 +131,7 @@ For support or questions, please open an issue or contact the maintainers.
 ---
 
 **Built with ❤️ using React and Vite**
+=======
+# Arriv.elite
+Arriv.elite
+>>>>>>> 7397fdbc46d9778b7dab5e9964fb22d21a91f546
