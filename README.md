@@ -1,22 +1,23 @@
-<<<<<<< HEAD
-# Arihant - Modern E-commerce Website
+# Arriv.Elite - Modern E-commerce Website
 
-A sleek, modern e-commerce website built with React and Vite, featuring a beautiful product catalog, shopping cart functionality, and responsive design.
+A sleek, modern e-commerce website built with React, Vite, and Tailwind CSS, featuring a beautiful product catalog, a WhatsApp-first ordering system, and a fully responsive design for the luxury ethnic fashion brand "Arriv.Elite".
 
 ## 🚀 Features
 
 - **Modern UI/UX**: Clean, minimalist design with smooth animations
-- **Product Catalog**: Browse and explore products with detailed descriptions
-- **Shopping Cart**: Add/remove items and manage your cart
+- **Product Catalog**: Browse and explore products with filtering, sorting, and search.
+- **WhatsApp Ordering**: A frictionless, conversion-focused ordering system that opens a pre-filled WhatsApp chat.
+- **"Shop The Look" Gallery**: An inspiration gallery to drive sales from visual content.
 - **Responsive Design**: Works seamlessly across desktop, tablet, and mobile devices
-- **Newsletter Signup**: Capture leads and keep customers informed
 - **Fast Performance**: Built with Vite for lightning-fast development and production builds
 
 ## 🛠 Tech Stack
 
 - **Frontend**: React 18
 - **Build Tool**: Vite
-- **Styling**: CSS3 with modern features
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **State Management**: React Context API
 - **Linting**: ESLint with React rules
 - **Package Manager**: npm
 
@@ -24,21 +25,23 @@ A sleek, modern e-commerce website built with React and Vite, featuring a beauti
 
 - React & React DOM
 - React Router DOM for navigation
-- Modern CSS features for styling
+- Tailwind CSS for styling
+- Framer Motion for animations
+- `lucide-react` for icons
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-- Node.js (version 16 or higher)
+- Node.js (version 18 or higher recommended)
 - npm or yarn
 
 ### Installation
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/arihant.git
-   cd arihant
+   git clone https://github.com/your-username/arriv.elite.git
+   cd arriv-elite
    ```
 
 2. Install dependencies:
@@ -51,12 +54,13 @@ A sleek, modern e-commerce website built with React and Vite, featuring a beauti
    npm run dev
    ```
 
-4. Open your browser and navigate to `http://localhost:5173`
+4. Open your browser and navigate to the local URL provided (e.g., `http://localhost:5173`)
 
 ### Available Scripts
 
 - `npm run dev` - Start development server with hot reload
 - `npm run build` - Build for production
+- `npm run lint` - Run ESLint to check for code quality issues
 - `npm run preview` - Preview production build locally
 
 ## 📁 Project Structure
