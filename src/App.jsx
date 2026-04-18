@@ -1,12 +1,19 @@
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
+import { AnimatePresence, motion } from 'framer-motion'
+import { CartProvider } from './context/CartContext.jsx'
+import { OrderModalProvider } from './context/OrderModalContext.jsx'
+import WhatsAppOrderModal from './components/WhatsAppOrderModal.jsx'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
+import ScrollToTop from './components/ScrollToTop'
 import About from './pages/About'
 import Blog from './pages/Blog'
 import Contact from './pages/Contact'
 import Home from './pages/Home'
 import ProductDetails from './pages/ProductDetails'
 import Shop from './pages/Shop'
+
+
 
 const staticPages = [
   {
@@ -35,21 +42,34 @@ const staticPages = [
   },
 ]
 
+function PageWrapper({ children }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -15 }}
+      transition={{ duration: 0.4 }}
+    >
+      {children}
+    </motion.div>
+  )
+}
+
 function PageTemplate({ title, subtitle }) {
   return (
     <section className="mx-auto max-w-7xl px-4 pb-8 pt-12 sm:px-6 sm:pt-16 lg:px-8">
-      <div className="relative overflow-hidden rounded-[2rem] border border-[#eadfcb] bg-white p-8 shadow-[0_20px_70px_rgba(126,102,42,0.10)] sm:p-12">
-        <div className="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full bg-[#fff3d6] blur-3xl" />
-        <div className="pointer-events-none absolute -left-24 bottom-0 h-52 w-52 rounded-full bg-[#f6ead2] blur-3xl" />
+      <div className="relative overflow-hidden rounded-[2rem] border border-cream bg-white p-8 shadow-[0_20px_70px_rgba(126,102,42,0.10)] sm:p-12">
+        <div className="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full bg-cream blur-3xl" />
+        <div className="pointer-events-none absolute -left-24 bottom-0 h-52 w-52 rounded-full bg-cream blur-3xl" />
 
         <div className="relative">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#b68f23]">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-gold">
             Arihant Fashion
           </p>
-          <h1 className="mt-4 max-w-3xl font-display text-4xl leading-tight text-[#2e271b] sm:text-5xl">
+          <h1 className="mt-4 max-w-3xl font-display text-4xl leading-tight text-black sm:text-5xl">
             {title}
           </h1>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#5e5547] sm:text-lg">
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-black sm:text-lg">
             {subtitle}
           </p>
         </div>
@@ -68,31 +88,41 @@ function NotFoundPage() {
 }
 
 function App() {
+  const location = useLocation()
+
   return (
-    <div className="min-h-screen bg-[#fffdf8] text-[#352e22]">
-      <Navbar />
+    <OrderModalProvider>
+      <CartProvider>
+      <div className="min-h-screen bg-white text-black">
+        <ScrollToTop />
+        <Navbar />
 
-      <main className="pt-[7.5rem] sm:pt-[8rem]">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/shop" element={<Shop />} />
-          <Route path="/product/:id" element={<ProductDetails />} />
-          {staticPages.map((page) => (
-            <Route
-              key={page.path}
-              path={page.path}
-              element={<PageTemplate title={page.title} subtitle={page.subtitle} />}
-            />
-          ))}
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </main>
+        <main className="pt-[7.5rem] sm:pt-[8rem]">
+          <AnimatePresence mode="wait">
+            <Routes location={location} key={location.pathname}>
+              <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
+              <Route path="/about" element={<PageWrapper><About /></PageWrapper>} />
+              <Route path="/blog" element={<PageWrapper><Blog /></PageWrapper>} />
+              <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
+              <Route path="/shop" element={<PageWrapper><Shop /></PageWrapper>} />
+              <Route path="/product/:id" element={<PageWrapper><ProductDetails /></PageWrapper>} />
+              {staticPages.map((page) => (
+                <Route
+                  key={page.path}
+                  path={page.path}
+                  element={<PageWrapper><PageTemplate title={page.title} subtitle={page.subtitle} /></PageWrapper>}
+                />
+              ))}
+              <Route path="*" element={<PageWrapper><NotFoundPage /></PageWrapper>} />
+            </Routes>
+          </AnimatePresence>
+        </main>
 
-      <Footer />
-    </div>
+        <Footer />
+        <WhatsAppOrderModal />
+      </div>
+    </CartProvider>
+    </OrderModalProvider>
   )
 }
 

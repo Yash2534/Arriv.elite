@@ -8,7 +8,7 @@ function BlogCard({ post, index }) {
       transition={{ duration: 0.45, delay: index * 0.05 }}
       viewport={{ once: true }}
       whileHover={{ y: -6, scale: 1.01 }}
-      className="group overflow-hidden rounded-2xl border border-[#D4AF37]/40 bg-white shadow-[0_14px_32px_rgba(0,0,0,0.06)] transition-shadow duration-300 hover:shadow-[0_20px_46px_rgba(0,0,0,0.12)]"
+      className="group overflow-hidden rounded-2xl border border-gold/40 bg-white shadow-[0_14px_32px_rgba(0,0,0,0.06)] transition-shadow duration-300 hover:shadow-[0_20px_46px_rgba(0,0,0,0.12)]"
     >
       <div className="relative overflow-hidden">
         <img
@@ -17,7 +17,7 @@ function BlogCard({ post, index }) {
           className="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-110"
           loading="lazy"
         />
-        <span className="absolute left-3 top-3 rounded-full bg-[#D4AF37] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-black">
+        <span className="absolute left-3 top-3 rounded-full bg-gold px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-black">
           {post.category}
         </span>
       </div>

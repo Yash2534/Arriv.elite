@@ -18,7 +18,7 @@ function ImageGallery({ images, name }) {
         initial={{ opacity: 0, y: 14 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.45 }}
-        className="group overflow-hidden rounded-2xl border border-[#D4AF37] bg-white shadow-[0_14px_36px_rgba(0,0,0,0.08)]"
+        className="group overflow-hidden rounded-2xl border border-gold bg-white shadow-[0_14px_36px_rgba(0,0,0,0.08)]"
       >
         <img
           src={activeImage}
@@ -42,8 +42,8 @@ function ImageGallery({ images, name }) {
               onClick={() => setActiveImage(image)}
               className={`overflow-hidden rounded-xl border bg-white transition-all duration-300 ${
                 isActive
-                  ? 'border-[#D4AF37] ring-2 ring-[#D4AF37]/30'
-                  : 'border-black/20 hover:border-[#D4AF37]'
+                  ? 'border-gold ring-2 ring-gold/30'
+                  : 'border-black/20 hover:border-gold'
               }`}
             >
               <img

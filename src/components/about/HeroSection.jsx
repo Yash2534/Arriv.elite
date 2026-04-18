@@ -11,7 +11,7 @@ function HeroSection() {
         alt="Arriv.Elite fashion story"
         className="h-[58vh] w-full object-cover sm:h-[66vh]"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0f0d0a]/85 via-[#0f0d0a]/55 to-[#0f0d0a]/30" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/30" />
 
       <motion.div
         initial={{ opacity: 0, y: 24 }}
@@ -21,7 +21,7 @@ function HeroSection() {
         className="absolute inset-0 mx-auto flex max-w-7xl items-center px-4 sm:px-6 lg:px-8"
       >
         <div className="max-w-3xl text-white">
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#f4d37e]">About Arriv.Elite</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-gold">About Arriv.Elite</p>
           <h1 className="mt-4 font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">
             Where Tradition Meets Modern Elegance
           </h1>

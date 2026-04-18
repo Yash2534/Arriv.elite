@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
 @import 'tailwindcss';
 
-:root {
-  --gold: #d4af37;
-  --gold-deep: #b68f23;
-  --cream: #fffdf8;
-  --cream-soft: #f7f1e6;
-  --text-main: #352e22;
+@theme {
+  --color-gold: #d4af37;
+  --color-cream: #f8f5f0;
+  --color-white: #ffffff;
+  --color-black: #000000;
 }
 
 * {
@@ -22,11 +21,8 @@ body,
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  color: var(--text-main);
-  background:
-    radial-gradient(circle at 8% 0%, #fff4da 0%, transparent 33%),
-    radial-gradient(circle at 92% 10%, #fff7e9 0%, transparent 30%),
-    var(--cream);
+  color: var(--color-black);
+  background-color: var(--color-cream);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -41,6 +37,6 @@ button {
 }
 
 ::selection {
-  color: #2f2718;
-  background: #f3ddb2;
+  color: var(--color-black);
+  background: var(--color-gold);
 }

@@ -21,18 +21,18 @@ function About() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="rounded-3xl border border-[#e5d8bf] bg-white p-8 text-center shadow-[0_14px_34px_rgba(0,0,0,0.06)] sm:p-10"
+          className="rounded-3xl border border-cream bg-white p-8 text-center shadow-[0_14px_34px_rgba(0,0,0,0.06)] sm:p-10"
         >
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#b68f23]">Ready To Explore</p>
-          <h2 className="mt-3 font-display text-3xl text-[#201911] sm:text-4xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-gold">Ready To Explore</p>
+          <h2 className="mt-3 font-display text-3xl text-black sm:text-4xl">
             Discover Your Style with Arriv.Elite
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-sm text-[#5a4f40] sm:text-base">
+          <p className="mx-auto mt-4 max-w-2xl text-sm text-black sm:text-base">
             Step into a curated fashion experience where culture, craftsmanship, and modern expression meet.
           </p>
           <Link
             to="/shop"
-            className="mt-7 inline-flex rounded-full bg-[#111111] px-7 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#d4af37] hover:text-[#1b140a]"
+            className="mt-7 inline-flex rounded-full bg-black px-7 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold hover:text-black"
           >
             Shop Now
           </Link>

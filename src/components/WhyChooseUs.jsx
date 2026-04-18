@@ -4,8 +4,13 @@ import { RefreshCcw, ShieldCheck, Sparkles, Truck } from 'lucide-react'
 const features = [
   {
     icon: Sparkles,
-    title: 'Premium Quality',
-    text: 'Luxury fabrics and meticulous finishing in every piece.',
+    title: 'Premium Fabric',
+    text: 'High-quality fabrics selected for comfort, drape, and festive elegance.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Elegant Designs',
+    text: 'Refined silhouettes inspired by Indian heritage and modern style.',
   },
   {
     icon: Truck,
@@ -17,38 +22,33 @@ const features = [
     title: 'Easy Returns',
     text: 'Simple, customer-friendly returns and exchanges.',
   },
-  {
-    icon: ShieldCheck,
-    title: 'Secure Payment',
-    text: 'Trusted checkout with safe and encrypted transactions.',
-  },
 ]
 
 function WhyChooseUs() {
   return (
-    <section className="bg-gradient-to-b from-[#fffdf8] to-[#f7f1e6] py-16">
+    <section className="bg-cream py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10 text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.26em] text-[#b68f23]">Why Choose Us</p>
-          <h2 className="mt-3 font-display text-3xl text-[#241d12] sm:text-4xl">Designed For Premium Shopping</h2>
+          <p className="text-xs font-semibold uppercase tracking-[0.26em] text-gold">Why Choose Us</p>
+          <h2 className="mt-3 font-display text-3xl text-black sm:text-4xl">Crafted For A Premium Experience</h2>
         </div>
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {features.map((feature, index) => (
             <motion.article
               key={feature.title}
-              className="group rounded-2xl border border-[#e8dcc8] bg-white p-6 text-center shadow-[0_8px_22px_rgba(35,29,20,0.06)]"
+              className="group rounded-2xl border border-cream bg-white p-6 text-center shadow-[0_10px_26px_rgba(35,29,20,0.07)]"
               initial={{ opacity: 0, y: 22 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45, delay: index * 0.08 }}
               viewport={{ once: true }}
               whileHover={{ y: -4 }}
             >
-              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#fff4d7] text-[#b68f23] transition-colors duration-300 group-hover:bg-[#d4af37] group-hover:text-[#2a2114]">
+              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-cream text-gold transition-colors duration-300 group-hover:bg-gold group-hover:text-black">
                 <feature.icon size={22} />
               </div>
-              <h3 className="mt-4 text-lg font-semibold text-[#2d2519]">{feature.title}</h3>
-              <p className="mt-2 text-sm text-[#625746]">{feature.text}</p>
+              <h3 className="mt-4 text-lg font-semibold text-black">{feature.title}</h3>
+              <p className="mt-2 text-sm text-black">{feature.text}</p>
             </motion.article>
           ))}
         </div>

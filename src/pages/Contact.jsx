@@ -16,7 +16,7 @@ function Contact() {
           alt="Arriv.Elite contact"
           className="h-[38vh] w-full object-cover sm:h-[44vh]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0f0d0a]/82 via-[#0f0d0a]/55 to-[#0f0d0a]/35" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/82 via-black/55 to-black/35" />
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -26,7 +26,7 @@ function Contact() {
           className="absolute inset-0 mx-auto flex max-w-7xl items-center px-4 sm:px-6 lg:px-8"
         >
           <div className="text-white">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#f4d37e]">Contact Us</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-gold">Contact Us</p>
             <h1 className="mt-3 font-display text-4xl sm:text-5xl">We’d love to hear from you</h1>
             <p className="mt-3 max-w-xl text-sm text-white/85 sm:text-base">
               Connect with Arriv.Elite for styling support, order help, and collaborations.
@@ -52,7 +52,7 @@ function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="overflow-hidden rounded-3xl border border-[#D4AF37]/45 bg-white shadow-[0_16px_36px_rgba(0,0,0,0.06)]"
+          className="overflow-hidden rounded-3xl border border-gold/45 bg-white shadow-[0_16px_36px_rgba(0,0,0,0.06)]"
         >
           <iframe
             title="Arriv.Elite Rajkot Location"
@@ -70,7 +70,7 @@ function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="rounded-3xl border border-[#D4AF37]/45 bg-[#FFF8ED] p-8 text-center shadow-[0_14px_34px_rgba(0,0,0,0.06)] sm:p-10"
+          className="rounded-3xl border border-gold/45 bg-cream p-8 text-center shadow-[0_14px_34px_rgba(0,0,0,0.06)] sm:p-10"
         >
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-black/70">Arriv.Elite</p>
           <h2 className="mt-3 font-display text-3xl text-black sm:text-4xl">Connect with Arriv.Elite</h2>
@@ -79,7 +79,7 @@ function Contact() {
           </p>
           <Link
             to="/shop"
-            className="mt-7 inline-flex rounded-full border border-black bg-black px-7 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#D4AF37] hover:text-black"
+            className="mt-7 inline-flex rounded-full border border-black bg-black px-7 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold hover:text-black"
           >
             Shop Now
           </Link>

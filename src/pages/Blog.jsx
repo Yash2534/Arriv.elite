@@ -108,7 +108,7 @@ function Blog() {
           alt="Arriv.Elite blog"
           className="h-[42vh] w-full object-cover sm:h-[48vh]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0f0d0a]/85 via-[#0f0d0a]/55 to-[#0f0d0a]/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/30" />
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -118,7 +118,7 @@ function Blog() {
           className="absolute inset-0 mx-auto flex max-w-7xl items-center px-4 sm:px-6 lg:px-8"
         >
           <div className="text-white">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#f4d37e]">Arriv.Elite Blog</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-gold">Arriv.Elite Blog</p>
             <h1 className="mt-3 font-display text-4xl sm:text-5xl">Fashion Tips & Styling Inspiration</h1>
             <p className="mt-3 max-w-2xl text-sm text-white/85 sm:text-base">
               Explore expert insights, style guides, and trend edits curated for confident modern women.
@@ -142,7 +142,7 @@ function Blog() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="mb-8 grid overflow-hidden rounded-3xl border border-[#D4AF37]/45 bg-white shadow-[0_18px_40px_rgba(0,0,0,0.08)] lg:grid-cols-[1.2fr_1fr]"
+            className="mb-8 grid overflow-hidden rounded-3xl border border-gold/45 bg-white shadow-[0_18px_40px_rgba(0,0,0,0.08)] lg:grid-cols-[1.2fr_1fr]"
           >
             <div className="overflow-hidden">
               <img
@@ -152,7 +152,7 @@ function Blog() {
               />
             </div>
             <div className="space-y-4 p-6 sm:p-8">
-              <span className="inline-flex rounded-full bg-[#D4AF37] px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-black">
+              <span className="inline-flex rounded-full bg-gold px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-black">
                 Featured
               </span>
               <p className="text-xs font-medium uppercase tracking-[0.16em] text-black/55">{featuredPost.date}</p>
@@ -175,7 +175,7 @@ function Blog() {
             ))}
           </div>
         ) : (
-          <div className="rounded-2xl border border-dashed border-[#D4AF37]/45 bg-white p-8 text-center text-black/70">
+          <div className="rounded-2xl border border-dashed border-gold/45 bg-white p-8 text-center text-black/70">
             No blog posts found for this filter.
           </div>
         )}
@@ -187,7 +187,7 @@ function Blog() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45 }}
           viewport={{ once: true }}
-          className="rounded-3xl border border-[#D4AF37]/45 bg-[#FFF8ED] p-8 text-center shadow-[0_14px_34px_rgba(0,0,0,0.06)] sm:p-10"
+          className="rounded-3xl border border-gold/45 bg-cream p-8 text-center shadow-[0_14px_34px_rgba(0,0,0,0.06)] sm:p-10"
         >
           <h2 className="font-display text-3xl text-black sm:text-4xl">Get Weekly Style Tips</h2>
           <p className="mx-auto mt-3 max-w-2xl text-sm text-black/70 sm:text-base">
@@ -203,11 +203,11 @@ function Blog() {
                 setIsSubscribed(false)
               }}
               placeholder="Enter your email"
-              className="h-12 flex-1 rounded-full border border-[#D4AF37]/50 bg-white px-5 text-sm text-black outline-none ring-[#D4AF37] placeholder:text-black/45 focus:ring-2"
+              className="h-12 flex-1 rounded-full border border-gold/50 bg-white px-5 text-sm text-black outline-none ring-gold placeholder:text-black/45 focus:ring-2"
             />
             <button
               type="submit"
-              className="h-12 rounded-full border border-black bg-black px-6 text-sm font-semibold uppercase tracking-[0.12em] text-white transition-all duration-300 hover:bg-[#D4AF37] hover:text-black"
+              className="h-12 rounded-full border border-black bg-black px-6 text-sm font-semibold uppercase tracking-[0.12em] text-white transition-all duration-300 hover:bg-gold hover:text-black"
             >
               Subscribe
             </button>
@@ -225,7 +225,7 @@ function Blog() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45 }}
           viewport={{ once: true }}
-          className="rounded-3xl border border-[#D4AF37]/45 bg-white p-8 text-center shadow-[0_14px_34px_rgba(0,0,0,0.06)] sm:p-10"
+          className="rounded-3xl border border-gold/45 bg-white p-8 text-center shadow-[0_14px_34px_rgba(0,0,0,0.06)] sm:p-10"
         >
           <h2 className="font-display text-3xl text-black sm:text-4xl">Connect with Arriv.Elite</h2>
           <p className="mx-auto mt-3 max-w-2xl text-sm text-black/70 sm:text-base">
@@ -233,7 +233,7 @@ function Blog() {
           </p>
           <Link
             to="/shop"
-            className="mt-7 inline-flex rounded-full border border-black bg-black px-7 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#D4AF37] hover:text-black"
+            className="mt-7 inline-flex rounded-full border border-black bg-black px-7 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold hover:text-black"
           >
             Shop Now
           </Link>

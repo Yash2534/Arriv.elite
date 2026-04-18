@@ -18,7 +18,7 @@ function FilterSidebar({ selectedPriceRange = 'all', onPriceChange }) {
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.45 }}
-      className="h-fit rounded-2xl border border-[#D4AF37]/45 bg-white p-5 shadow-[0_12px_32px_rgba(0,0,0,0.05)]"
+      className="h-fit rounded-2xl border border-gold/45 bg-white p-5 shadow-[0_12px_32px_rgba(0,0,0,0.05)]"
     >
       <h2 className="text-lg font-semibold text-black">Filters</h2>
 
@@ -32,7 +32,7 @@ function FilterSidebar({ selectedPriceRange = 'all', onPriceChange }) {
               value={option.value}
               checked={selectedPriceRange === option.value}
               onChange={(event) => handlePriceChange(event.target.value)}
-              className="h-4 w-4 accent-[#D4AF37]"
+              className="h-4 w-4 accent-gold"
             />
             {option.label}
           </label>

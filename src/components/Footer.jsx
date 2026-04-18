@@ -31,24 +31,24 @@ function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="mt-20 border-t border-[#e8dcc6] bg-gradient-to-b from-[#fffdf8] via-[#fcf8ef] to-[#f7f1e6] text-[#4b4335]">
+    <footer className="mt-20 border-t border-cream bg-gradient-to-b from-white via-cream to-cream text-black">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <h2 className="font-display text-3xl font-bold tracking-[0.18em] text-[#D4AF37]">
+            <h2 className="font-display text-3xl font-bold tracking-[0.18em] text-gold">
               Arriv.Elite
             </h2>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-[#665e50]">
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-gold">
               Arriv.Elite creates premium ethnic fashion with modern silhouettes, refined fabrics,
               and timeless detailing for festive and everyday elegance.
             </p>
-            <p className="mt-4 text-xs font-semibold uppercase tracking-[0.12em] text-[#8f7540]">
+            <p className="mt-4 text-xs font-semibold uppercase tracking-[0.12em] text-gold">
               Premium Ethnic Wear For Women
             </p>
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-[#2f281c]">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-black">
               Explore
             </h3>
             <ul className="mt-4 space-y-3">
@@ -56,7 +56,7 @@ function Footer() {
                 <li key={link.to}>
                   <Link
                     to={link.to}
-                    className="text-sm text-[#5f574a] transition-colors duration-300 hover:text-[#b68f23]"
+                    className="text-sm text-gold transition-colors duration-300 hover:text-gold"
                   >
                     {link.label}
                   </Link>
@@ -66,7 +66,7 @@ function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-[#2f281c]">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-black">
               Customer Support
             </h3>
             <ul className="mt-4 space-y-3">
@@ -74,7 +74,7 @@ function Footer() {
                 <li key={link.to}>
                   <Link
                     to={link.to}
-                    className="text-sm text-[#5f574a] transition-colors duration-300 hover:text-[#b68f23]"
+                    className="text-sm text-gold transition-colors duration-300 hover:text-gold"
                   >
                     {link.label}
                   </Link>
@@ -84,25 +84,25 @@ function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-[#2f281c]">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-black">
               Contact
             </h3>
-            <ul className="mt-4 space-y-3 text-sm text-[#5f574a]">
+            <ul className="mt-4 space-y-3 text-sm text-gold">
               <li>Kalavad Road, Rajkot, Gujarat 360005</li>
               <li>
-                <a className="transition-colors hover:text-[#b68f23]" href="tel:+919876543210">
+                <a className="transition-colors hover:text-gold" href="tel:+919876543210">
                   +91 98765 43210
                 </a>
               </li>
               <li>
                 <a
-                  className="transition-colors hover:text-[#b68f23]"
+                  className="transition-colors hover:text-gold"
                   href="mailto:care@arrivelite.com"
                 >
                   care@arrivelite.com
                 </a>
               </li>
-              <li className="text-xs uppercase tracking-[0.1em] text-[#8a816f]">
+              <li className="text-xs uppercase tracking-[0.1em] text-gold">
                 Mon-Sat 10:30 AM - 8:30 PM
               </li>
             </ul>
@@ -118,7 +118,7 @@ function Footer() {
                     target="_blank"
                     rel="noreferrer"
                     aria-label={link.label}
-                    className="rounded-full border border-[#e4d6be] p-2.5 text-[#4b4335] transition-all duration-300 hover:border-[#D4AF37] hover:bg-[#fff7e5] hover:text-[#b68f23]"
+                    className="rounded-full border border-cream p-2.5 text-black transition-all duration-300 hover:border-gold hover:bg-cream hover:text-gold"
                   >
                     <SocialIcon className="text-base" />
                   </a>
@@ -129,8 +129,8 @@ function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-[#e8dcc6] bg-white/80">
-        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4 text-center text-xs tracking-wide text-[#6f6655] sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+      <div className="border-t border-cream bg-white/80">
+        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4 text-center text-xs tracking-wide text-gold sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
           <p>© {currentYear} Arriv.Elite. All rights reserved.</p>
           <p>Designed for a modern luxury shopping experience.</p>
         </div>

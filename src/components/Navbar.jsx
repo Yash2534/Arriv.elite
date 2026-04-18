@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import {
   FiMenu,
   FiShoppingBag,
@@ -7,147 +7,150 @@ import {
   FiX,
 } from 'react-icons/fi'
 import logo from '../assets/LOGO.jpeg'
+import { useCart } from '../context/CartContext'
 
 const navLinkClass = ({ isActive }) => {
   const base =
-    'relative py-2 text-sm font-medium tracking-wide text-[#403829] transition-colors duration-300 hover:text-[#b68f23] after:absolute after:-bottom-0.5 after:left-0 after:h-[1.5px] after:w-full after:origin-left after:bg-[#D4AF37] after:transition-transform after:duration-300'
+    'relative py-2 text-[12px] font-semibold uppercase tracking-[0.18em] text-black transition-colors duration-300 hover:text-gold after:absolute after:-bottom-1 after:left-0 after:h-[1.5px] after:w-full after:origin-left after:bg-gold after:transition-transform after:duration-300'
 
   return isActive
-    ? `${base} text-[#b68f23] after:scale-x-100`
+    ? `${base} text-gold after:scale-x-100`
     : `${base} after:scale-x-0 hover:after:scale-x-100`
 }
 
 function Navbar() {
   const [isMobileOpen, setIsMobileOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const navigate = useNavigate()
+
+    // Cart logic removed
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const closeMobileMenu = () => {
     setIsMobileOpen(false)
   }
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-[#e8dcc6] shadow-[0_8px_30px_rgba(126,102,42,0.08)]">
-      <div className="border-b border-[#eadfcb] bg-[#f7f1e6]/95 backdrop-blur-sm">
-        <div className="mx-auto flex h-10 max-w-7xl items-center justify-between px-4 text-[11px] font-medium tracking-wide text-[#6f6552] sm:px-6 sm:text-xs lg:px-8">
-          <div className="flex items-center gap-3 text-[10px] sm:gap-5 sm:text-xs">
-            <a className="transition-colors hover:text-[#b68f23]" href="tel:+919876543210">
-+91 878 047 6677
+    <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-[0_4px_24px_rgba(0,0,0,0.06)]' : 'bg-white/95 backdrop-blur-sm'}`}>
+      {/* TOP HEADER */}
+      <div className="bg-black text-cream">
+        <div className="mx-auto flex h-9 max-w-7xl items-center justify-between px-4 text-[10px] font-medium tracking-[0.2em] sm:px-6 sm:text-xs lg:px-8">
+          <div className="hidden sm:block uppercase">Luxury Ethnic Wear</div>
+          <div className="flex w-full justify-between sm:w-auto sm:justify-end gap-5">
+            <span className="uppercase sm:hidden">Luxury Ethnic Wear</span>
+            <a className="transition-colors hover:text-gold" href="tel:+918780476677">
+              +91 878 047 6677
             </a>
-            <a
-              className="transition-colors hover:text-[#b68f23]"
-              href="mailto:care@arihantfashion.com"
-            >
-arihantkhimaniya@gmail.com            </a>
           </div>
         </div>
       </div>
 
-      <div className="bg-white/95 backdrop-blur-sm">
+      <div className="w-full">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-20 items-center justify-between gap-4 sm:h-24">
+            
+            {/* LEFT: LOGO */}
             <Link
               to="/"
               className="group flex items-center gap-3 transition-opacity duration-300 hover:opacity-90 sm:gap-4"
               aria-label="Arihant Home"
+              onClick={closeMobileMenu}
             >
               <img
                 src={logo}
                 alt="Arihant"
-                className="h-14 w-auto object-contain drop-shadow-[0_8px_14px_rgba(120,95,32,0.22)] sm:h-16 lg:h-[72px]"
+                className="h-12 w-auto object-contain sm:h-14 lg:h-16"
                 loading="eager"
               />
-       
             </Link>
 
-            <nav className="hidden items-center gap-8 lg:flex" aria-label="Main navigation">
-              <NavLink to="/" className={navLinkClass}>
-                Home
-              </NavLink>
-              <NavLink to="/shop" className={navLinkClass}>
-                Shop
-              </NavLink>
-
-              <NavLink to="/about" className={navLinkClass}>
-                About
-              </NavLink>
-              <NavLink to="/blog" className={navLinkClass}>
-                Blog
-              </NavLink>
-              <NavLink to="/contact" className={navLinkClass}>
-                Contact
-              </NavLink>
+            {/* CENTER: DESKTOP NAV */}
+            <nav className="hidden items-center gap-8 lg:flex lg:gap-10" aria-label="Main navigation">
+              <NavLink to="/" className={navLinkClass}>Home</NavLink>
+              <NavLink to="/shop" className={navLinkClass}>Shop</NavLink>
+              <NavLink to="/about" className={navLinkClass}>About</NavLink>
+              <NavLink to="/blog" className={navLinkClass}>Blog</NavLink>
+              <NavLink to="/contact" className={navLinkClass}>Contact</NavLink>
             </nav>
 
-            <div className="hidden items-center gap-2 sm:flex">
-              <button
-                type="button"
-                aria-label="Cart"
-                className="rounded-full p-2.5 text-[#4b4335] transition-all duration-300 hover:bg-[#fbf6ea] hover:text-[#b68f23]"
-              >
-                <FiShoppingBag className="text-lg" />
-              </button>
-              <button
-                type="button"
-                aria-label="User account"
-                className="rounded-full p-2.5 text-[#4b4335] transition-all duration-300 hover:bg-[#fbf6ea] hover:text-[#b68f23]"
-              >
-                <FiUser className="text-lg" />
-              </button>
+            {/* RIGHT: ICONS AND CTA */}
+            <div className="hidden items-center gap-6 lg:flex">
+              <div className="flex items-center gap-4">
+                  {/* Cart button removed */}
+                <button
+                  type="button"
+                  aria-label="User account"
+                  className="flex items-center justify-center rounded-full bg-transparent p-2.5 text-black transition-all duration-300 hover:bg-cream hover:text-gold"
+                >
+                  <FiUser className="text-[20px]" />
+                </button>
+              </div>
             </div>
 
-            <button
-              type="button"
-              aria-label="Toggle menu"
-              className="rounded-full p-2 text-[#4b4335] transition-colors hover:bg-[#fbf6ea] hover:text-[#b68f23] lg:hidden"
-              onClick={() => setIsMobileOpen((open) => !open)}
-            >
-              {isMobileOpen ? <FiX className="text-2xl" /> : <FiMenu className="text-2xl" />}
-            </button>
+            {/* MOBILE: ICONS & HAMBURGER */}
+            <div className="flex items-center gap-3 lg:hidden">
+              <button
+                type="button"
+                onClick={() => setIsCartOpen(true)}
+                title="Cart"
+                className="relative flex items-center justify-center rounded-full bg-cream p-2.5 text-black shadow-sm transition-all duration-300 hover:scale-105 hover:bg-gold hover:text-black"
+              >
+                <FiShoppingBag className="text-[18px]" />
+                {/* cartCount removed */}
+              </button>
+              <button
+                type="button"
+                aria-label="Toggle menu"
+                className="text-black transition-colors hover:text-gold"
+                onClick={() => setIsMobileOpen((open) => !open)}
+              >
+                {isMobileOpen ? <FiX className="text-3xl" /> : <FiMenu className="text-3xl" />}
+              </button>
+            </div>
           </div>
         </div>
       </div>
 
+      {/* MOBILE NAV DROPDOWN */}
       <div
-        className={`lg:hidden border-t border-[#eadfcb] bg-white transition-all duration-300 ${
-          isMobileOpen ? 'max-h-[520px] opacity-100' : 'max-h-0 overflow-hidden opacity-0'
+        className={`lg:hidden border-t border-gold/20 bg-cream transition-all duration-500 ease-in-out absolute w-full ${
+          isMobileOpen ? 'max-h-[500px] opacity-100 shadow-2xl' : 'max-h-0 overflow-hidden opacity-0 border-none'
         }`}
       >
-        <nav className="space-y-1 px-4 py-4" aria-label="Mobile navigation">
-          <NavLink to="/" className="block rounded-lg px-3 py-2 text-[#433b2e]" onClick={closeMobileMenu}>
-            Home
-          </NavLink>
-          <NavLink to="/shop" className="block rounded-lg px-3 py-2 text-[#433b2e]" onClick={closeMobileMenu}>
-            Shop
-          </NavLink>
-
-          <NavLink to="/about" className="block rounded-lg px-3 py-2 text-[#433b2e]" onClick={closeMobileMenu}>
-            About
-          </NavLink>
-          <NavLink to="/blog" className="block rounded-lg px-3 py-2 text-[#433b2e]" onClick={closeMobileMenu}>
-            Blog
-          </NavLink>
-          <NavLink to="/contact" className="block rounded-lg px-3 py-2 text-[#433b2e]" onClick={closeMobileMenu}>
-            Contact
-          </NavLink>
-
-          <div className="mt-3 flex items-center gap-2 border-t border-[#ece1cf] pt-3">
-         
+        <nav className="flex flex-col space-y-6 px-6 py-8" aria-label="Mobile navigation">
+          {['Home', 'Shop', 'About', 'Blog', 'Contact'].map((item) => (
+            <NavLink 
+              key={item} 
+              to={item === 'Home' ? '/' : `/${item.toLowerCase()}`} 
+              className="group flex w-full items-center justify-between text-sm font-semibold uppercase tracking-[0.2em] text-black transition-colors duration-300 hover:text-gold" 
+              onClick={closeMobileMenu}
+            >
+              {item}
+              <span className="block h-[1.5px] w-0 bg-gold transition-all duration-300 group-hover:w-8" />
+            </NavLink>
+          ))}
+          
+          <div className="mt-6 flex flex-col gap-6 border-t border-black/10 pt-8">
             <button
               type="button"
-              aria-label="Cart"
-              className="rounded-full p-2.5 text-[#4b4335] transition-all duration-300 hover:bg-[#fbf6ea] hover:text-[#b68f23]"
+              className="flex items-center gap-3 text-black transition-colors duration-300 hover:text-gold"
             >
-              <FiShoppingBag className="text-lg" />
-            </button>
-            <button
-              type="button"
-              aria-label="User account"
-              className="rounded-full p-2.5 text-[#4b4335] transition-all duration-300 hover:bg-[#fbf6ea] hover:text-[#b68f23]"
-            >
-              <FiUser className="text-lg" />
+              <FiUser className="text-[22px]" />
+              <span className="text-xs font-bold uppercase tracking-[0.2em]">Account</span>
             </button>
           </div>
         </nav>
       </div>
+
+      {/* CART DRAWER */}
+      {/* Cart drawer removed */}
     </header>
   )
 }

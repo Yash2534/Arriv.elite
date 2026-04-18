@@ -28,8 +28,8 @@ function Values() {
   return (
     <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div className="mb-8 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#b68f23]">Why We Exist</p>
-        <h2 className="mt-3 font-display text-3xl text-[#201911] sm:text-4xl">Our Core Values</h2>
+        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-gold">Why We Exist</p>
+        <h2 className="mt-3 font-display text-3xl text-black sm:text-4xl">Our Core Values</h2>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -43,13 +43,13 @@ function Values() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45, delay: index * 0.06 }}
               viewport={{ once: true }}
-              className="rounded-2xl border border-[#e8dcc6] bg-white p-5 shadow-[0_10px_28px_rgba(0,0,0,0.05)]"
+              className="rounded-2xl border border-cream bg-white p-5 shadow-[0_10px_28px_rgba(0,0,0,0.05)]"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#fff3d6] text-[#b68f23]">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-cream text-gold">
                 <Icon size={18} />
               </div>
-              <h3 className="mt-4 text-lg font-semibold text-[#201911]">{value.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-[#544a3b]">{value.description}</p>
+              <h3 className="mt-4 text-lg font-semibold text-black">{value.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-black">{value.description}</p>
             </motion.article>
           )
         })}

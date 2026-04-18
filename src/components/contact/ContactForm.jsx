@@ -63,7 +63,7 @@ function ContactForm() {
   }
 
   const inputClass =
-    'w-full rounded-xl border border-[#D4AF37]/50 bg-white px-4 py-3 text-sm text-black outline-none transition-all duration-300 placeholder:text-black/45 focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/25'
+    'w-full rounded-xl border border-gold/50 bg-white px-4 py-3 text-sm text-black outline-none transition-all duration-300 placeholder:text-black/45 focus:border-gold focus:ring-2 focus:ring-gold/25'
 
   return (
     <motion.form
@@ -72,7 +72,7 @@ function ContactForm() {
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
       onSubmit={handleSubmit}
-      className="rounded-3xl border border-[#D4AF37]/45 bg-white p-6 shadow-[0_16px_38px_rgba(0,0,0,0.07)] sm:p-8"
+      className="rounded-3xl border border-gold/45 bg-white p-6 shadow-[0_16px_38px_rgba(0,0,0,0.07)] sm:p-8"
       noValidate
     >
       <h2 className="font-display text-3xl text-black">Send A Message</h2>
@@ -130,13 +130,13 @@ function ContactForm() {
 
       <button
         type="submit"
-        className="mt-5 w-full rounded-xl border border-black bg-black px-5 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-white transition-all duration-300 hover:bg-[#D4AF37] hover:text-black"
+        className="mt-5 w-full rounded-xl border border-black bg-black px-5 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-white transition-all duration-300 hover:bg-gold hover:text-black"
       >
         Send Message
       </button>
 
       {isSubmitted ? (
-        <p className="mt-4 rounded-lg border border-[#D4AF37]/40 bg-[#FFF8ED] px-4 py-2 text-sm text-black/80">
+        <p className="mt-4 rounded-lg border border-gold/40 bg-cream px-4 py-2 text-sm text-black/80">
           Thank you. Your message has been sent successfully.
         </p>
       ) : null}

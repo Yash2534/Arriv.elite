@@ -2,7 +2,7 @@ import { FiSearch } from 'react-icons/fi'
 
 function BlogFilter({ categories, selectedCategory, onCategoryChange, searchQuery, onSearchChange }) {
   return (
-    <div className="mb-8 rounded-2xl border border-[#D4AF37]/45 bg-white p-4 shadow-[0_12px_30px_rgba(0,0,0,0.05)] sm:p-5">
+    <div className="mb-8 rounded-2xl border border-gold/45 bg-white p-4 shadow-[0_12px_30px_rgba(0,0,0,0.05)] sm:p-5">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
         <div className="flex flex-wrap gap-2">
           {categories.map((category) => {
@@ -16,7 +16,7 @@ function BlogFilter({ categories, selectedCategory, onCategoryChange, searchQuer
                 className={`rounded-full border px-4 py-2 text-sm font-medium transition-all duration-300 ${
                   isActive
                     ? 'border-black bg-black text-white'
-                    : 'border-[#D4AF37]/45 bg-[#FFF8ED] text-black hover:border-[#D4AF37]'
+                    : 'border-gold/45 bg-cream text-black hover:border-gold'
                 }`}
               >
                 {category}
@@ -33,7 +33,7 @@ function BlogFilter({ categories, selectedCategory, onCategoryChange, searchQuer
             value={searchQuery}
             onChange={(event) => onSearchChange(event.target.value)}
             placeholder="Search by title"
-            className="w-full rounded-xl border border-[#D4AF37]/45 bg-white py-2.5 pl-10 pr-3 text-sm text-black outline-none transition-colors duration-300 placeholder:text-black/45 focus:border-[#D4AF37]"
+            className="w-full rounded-xl border border-gold/45 bg-white py-2.5 pl-10 pr-3 text-sm text-black outline-none transition-colors duration-300 placeholder:text-black/45 focus:border-gold"
           />
         </label>
       </div>

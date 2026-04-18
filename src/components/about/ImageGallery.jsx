@@ -13,8 +13,8 @@ function ImageGallery() {
   return (
     <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div className="mb-8 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#b68f23]">Lifestyle</p>
-        <h2 className="mt-3 font-display text-3xl text-[#1f180f] sm:text-4xl">The Arriv.Elite World</h2>
+        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-gold">Lifestyle</p>
+        <h2 className="mt-3 font-display text-3xl text-black sm:text-4xl">The Arriv.Elite World</h2>
       </div>
 
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">

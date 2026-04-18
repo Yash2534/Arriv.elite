@@ -12,7 +12,7 @@ function StorySection() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.55 }}
         viewport={{ once: true }}
-        className="grid items-center gap-8 rounded-3xl border border-[#e8dcc6] bg-white p-6 shadow-[0_18px_40px_rgba(0,0,0,0.07)] md:grid-cols-2 md:p-10"
+        className="grid items-center gap-8 rounded-3xl border border-cream bg-white p-6 shadow-[0_18px_40px_rgba(0,0,0,0.07)] md:grid-cols-2 md:p-10"
       >
         <div className="overflow-hidden rounded-2xl">
           <img
@@ -23,22 +23,22 @@ function StorySection() {
         </div>
 
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#b68f23]">Brand Story</p>
-          <h2 className="mt-3 font-display text-3xl text-[#1f1a12] sm:text-4xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-gold">Brand Story</p>
+          <h2 className="mt-3 font-display text-3xl text-black sm:text-4xl">
             A Story Woven In Culture, Craft, And Confidence
           </h2>
-          <p className="mt-4 text-sm leading-relaxed text-[#4f4638] sm:text-base">
-            Arriv.Elite was born from a vision to <span className="font-semibold text-[#17120a]">redefine ethnic fashion</span> by
+          <p className="mt-4 text-sm leading-relaxed text-black sm:text-base">
+            Arriv.Elite was born from a vision to <span className="font-semibold text-black">redefine ethnic fashion</span> by
             blending tradition with modern sophistication. We believe every woman deserves to feel
             confident, elegant, and empowered through what she wears.
           </p>
-          <p className="mt-4 text-sm leading-relaxed text-[#4f4638] sm:text-base">
+          <p className="mt-4 text-sm leading-relaxed text-black sm:text-base">
             From carefully curated fabrics to detailed craftsmanship, every piece tells a story of
             culture, passion, and innovation.
           </p>
           <Link
             to="/shop"
-            className="mt-6 inline-flex rounded-full border border-[#1e1810] px-5 py-2.5 text-sm font-semibold text-[#1e1810] transition-all duration-300 hover:border-[#d4af37] hover:bg-[#d4af37] hover:text-[#1f180d]"
+            className="mt-6 inline-flex rounded-full border border-black px-5 py-2.5 text-sm font-semibold text-black transition-all duration-300 hover:border-gold hover:bg-gold hover:text-black"
           >
             Read More
           </Link>
